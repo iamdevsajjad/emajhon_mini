@@ -13,7 +13,7 @@ const ProductsContainer = () => {
 
     return (
         <div>
-            <div className="products">
+            <div className="products grid grid-cols-3 gap-5">
                 {
                     products.map(product =><Product
                     key={product.id}
