@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Product from '../Product/Product';
 
-const ProductsContainer = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch("product.json")
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[]);
-
+const ProductsContainer = ({handleAddToCart, products}) => {
 
     return (
         <div>
@@ -18,6 +10,7 @@ const ProductsContainer = () => {
                     products.map(product =><Product
                     key={product.id}
                     product={product}
+                    handleAddToCart={handleAddToCart}
                     />)
                 }
             </div>
