@@ -1,6 +1,7 @@
 import React from "react";
 
 const Product = ({ product, handleAddToCart }) => {
+
   return (
     <div className="fullCard w-[300px] h-[509px] border-2 border-black rounded-md relative">
       <div className="imgSection h-[286px]">

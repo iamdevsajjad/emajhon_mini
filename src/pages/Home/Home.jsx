@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
+import { addToDB } from "../../utilities/fakeDB";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,10 @@ const Home = () => {
 
   const handleAddToCart = (product) => {
     setItems([...items,product ])
+    addToDB(product.id)
   };
+
+
   return (
     <div className="flex ">
       <div className="products_container grid-flow-col-[4fr 1fr]  w-full p-5">

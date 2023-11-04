@@ -1,17 +1,30 @@
 import React from "react";
 const Cart = ({ items }) => {
+
+    let total = 0;
+    let shippingCharge = 0;
+    for(const item of items){
+        total = total + item.price;
+        shippingCharge = shippingCharge + item.shipping;
+    }
+      const tax = total*7 / 100;
+      const grandTotal = total + shippingCharge + tax;
+
+
+
   return (
     <div className=" sticky top-6 h-[508px] bg-[#FFE0B3] w-[264px] p-3 rounded-md">
       <h3 className="text-center text-xl font-semibold my-3">Order Summery</h3>
       <div className="results p-5">
         <p className="my-3">Selected items : {items.length} </p>
-        <p className="my-3">Total Price : 0 </p>
-        <p className="my-3">Total Shipping Charge : 0 </p>
-        <p className="my-3">Tax : 0 </p>
-        <p className="mt-8 text-xl">Grand Total : 0 </p>
+        <p className="my-3">Total Price : ${total} </p>
+        <p className="my-3">Shipping Charge : ${shippingCharge} </p>
+        <p className="my-3">Tax : {tax.toFixed(2)} </p>
+        <p className="mt-8 text-xl">Grand Total : {grandTotal.toFixed(2)} </p>
       </div>
       <div className="buttons w-full">
-        <button className="flex  text-white bg-[#FF3030] hover:bg-[#e63535] transition-all mx-auto px-12 my-2 py-1 rounded-sm">
+        <button
+        className="flex  text-white bg-[#FF3030] hover:bg-[#e63535] transition-all mx-auto px-12 my-2 py-1 rounded-sm">
           <p className="">Clear Cart</p>{" "}
           <div className="icon mx-2">
             <svg
