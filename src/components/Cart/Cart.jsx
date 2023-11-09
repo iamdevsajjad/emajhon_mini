@@ -13,7 +13,7 @@ const Cart = ({ items }) => {
 
 
   return (
-    <div className=" sticky top-6 h-[508px] bg-[#FFE0B3] w-[264px] p-3 rounded-md">
+    <div className=" sticky top-24 h-[508px] bg-[#FFE0B3] w-[264px] p-3 rounded-md">
       <h3 className="text-center text-xl font-semibold my-3">Order Summery</h3>
       <div className="results p-5">
         <p className="my-3">Selected items : {items.length} </p>
