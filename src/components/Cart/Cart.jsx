@@ -3,8 +3,10 @@ const Cart = ({ items }) => {
 
     let total = 0;
     let shippingCharge = 0;
+    let quantity = 0;
     for(const item of items){
-        total = total + item.price;
+      quantity = quantity + item.quantity
+        total = total + item.price * item.quantity;
         shippingCharge = shippingCharge + item.shipping;
     }
       const tax = total*7 / 100;
@@ -16,7 +18,7 @@ const Cart = ({ items }) => {
     <div className=" sticky top-24 h-[508px] bg-[#FFE0B3] w-[264px] p-3 rounded-md">
       <h3 className="text-center text-xl font-semibold my-3">Order Summery</h3>
       <div className="results p-5">
-        <p className="my-3">Selected items : {items.length} </p>
+        <p className="my-3">Selected items : {quantity} </p>
         <p className="my-3">Total Price : ${total} </p>
         <p className="my-3">Shipping Charge : ${shippingCharge} </p>
         <p className="my-3">Tax : {tax.toFixed(2)} </p>

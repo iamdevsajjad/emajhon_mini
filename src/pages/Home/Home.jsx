@@ -32,7 +32,17 @@ const Home = () => {
 
 
   const handleAddToCart = (product) => {
-    setItems([...items,product ])
+    let newCart = [];
+    const exist = items.find(pd => items.id === product.id );
+    if(!exist){
+      product.quantity = 1;
+      newCart = [...items, product]
+    }else{
+      const rest = items.filter(pd => pd.id !== product.id);
+      exist.quantity = exist.quantity + 1;
+      newCart = [rest, product];
+    }
+    setItems(newCart)
     addToDB(product.id)
   };
 
