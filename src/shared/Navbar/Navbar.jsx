@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../../assets/images/Logo.svg";
 
 const Navbar = () => {
@@ -11,11 +12,12 @@ const Navbar = () => {
                 <div className="navContainer text-white my-auto">
                     <nav className=''>
                         <ul className='flex gap-5 '>
-                            <li><a href="">Order</a></li>
-                            <li><a href="">Order Review</a></li>
-                            <li><a href="">Order</a>Manage Inventory</li>
-                            <li><a href="">Order</a>Login</li>
-                            <li><a href="">Order</a></li>
+                            <li><Link to="/">Order</Link></li>
+                            <li><Link to="orderReview">Order Review</Link></li>
+                            <li><Link to="manageInventory">Manage Inventory</Link></li>
+                            <li><Link to="login">Login</Link></li>
+                            
+
                         </ul>
                     </nav>
                 </div>
