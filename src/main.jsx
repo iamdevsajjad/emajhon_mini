@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login.jsx";
 import ManageInventory from "./pages/ManageInventory/ManageInventory.jsx";
 import OrderReview from "./pages/OrderReview/OrderReview.jsx";
 import Main from "./shared/main/Main.jsx";
+import cartProductLoader from "./utilities/cardProductLoader.js";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/orderReview",
         element: <OrderReview/>,
+        loader: cartProductLoader
       },
       {
         path: "/manageInventory",
