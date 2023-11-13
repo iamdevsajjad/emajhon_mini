@@ -1,5 +1,5 @@
 import React from "react";
-const Cart = ({ items , handleClearCart}) => {
+const Cart = ({ items , handleClearCart, children}) => {
 
     let total = 0;
     let shippingCharge = 0;
@@ -27,7 +27,7 @@ const Cart = ({ items , handleClearCart}) => {
       <div className="buttons w-full">
         <button
         onClick={handleClearCart}
-        className="flex  text-white bg-[#FF3030] hover:bg-[#e63535] transition-all mx-auto px-12 my-2 py-1 rounded-sm">
+        className="flex justify-between w-[90%] mx-auto p-2 my-3 text-white bg-[#FF3030] hover:bg-[#e63535] transition-all  rounded-sm">
           <p className="">Clear Cart</p>{" "}
           <div className="icon mx-2">
             <svg
@@ -46,25 +46,7 @@ const Cart = ({ items , handleClearCart}) => {
             </svg>
           </div>
         </button>
-        <button className="flex  text-white bg-[#FF9900] hover:bg-[#c89345] transition-all mx-auto px-12 my-2 py-1 rounded-sm">
-          <p className="mx-2">Clear Cart</p>{" "}
-          <div className="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </div>
-        </button>
+        {children}
       </div>
     </div>
   );
