@@ -2,7 +2,7 @@ import React from "react";
 const ReviewItem = ({ product, handleRemoveFromCart }) => {
   const { id, img, name, price, quantity } = product;
   return (
-    <div className="w-[571px] h-[107px] p-[8px] border-2 border-gray-500 rounded-md my-3 flex px-[25px] py-[8px]">
+    <div className="w-[600px] h-[107px] p-[8px] border-2 border-gray-500 rounded-md my-3 flex px-[25px] py-[8px]">
       <img className="w-[91px] h-[91px] rounded-md " src={img} alt="" />
       <div className="reviewDetails my-[0px] mx-[15px] grow  ">
         <p className="font-normal text-xl leading-6 ">{name}</p>

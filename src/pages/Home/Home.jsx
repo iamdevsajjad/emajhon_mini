@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
-import { addToDB, getShoppingCart } from "../../utilities/fakeDB";
+import { addToDB, deleteShoppingCart, getShoppingCart } from "../../utilities/fakeDB";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +33,7 @@ const Home = () => {
 
   const handleAddToCart = (product) => {
     let newCart = [];
-    const exist = items.find(pd => items.id === product.id );
+    const exist = items.find(pd => items.id === pd.id );
     if(!exist){
       product.quantity = 1;
       newCart = [...items, product]
@@ -46,6 +46,10 @@ const Home = () => {
     addToDB(product.id)
   };
 
+  const handleClearCart = () => {
+    setItems([]);
+    deleteShoppingCart()
+  }
 
   return (
     <div className="flex ">
@@ -57,6 +61,7 @@ const Home = () => {
       <div className="cart ">
         <Cart 
         items={items}
+        handleClearCart={handleClearCart}
         />
       </div>
     </div>

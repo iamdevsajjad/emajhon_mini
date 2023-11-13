@@ -1,5 +1,5 @@
 import React from "react";
-const Cart = ({ items }) => {
+const Cart = ({ items , handleClearCart}) => {
 
     let total = 0;
     let shippingCharge = 0;
@@ -26,6 +26,7 @@ const Cart = ({ items }) => {
       </div>
       <div className="buttons w-full">
         <button
+        onClick={handleClearCart}
         className="flex  text-white bg-[#FF3030] hover:bg-[#e63535] transition-all mx-auto px-12 my-2 py-1 rounded-sm">
           <p className="">Clear Cart</p>{" "}
           <div className="icon mx-2">
