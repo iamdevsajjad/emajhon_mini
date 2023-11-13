@@ -1,10 +1,10 @@
 import React from "react";
-const ReviewItem = ({ product }) => {
+const ReviewItem = ({ product, handleRemoveFromCart }) => {
   const { id, img, name, price, quantity } = product;
   return (
-    <div className="w-[571px] h-[107px] p-[8px] border-2 border-gray-500 rounded-md my-3 flex">
+    <div className="w-[571px] h-[107px] p-[8px] border-2 border-gray-500 rounded-md my-3 flex px-[25px] py-[8px]">
       <img className="w-[91px] h-[91px] rounded-md " src={img} alt="" />
-      <div className="reviewDetails my-[0px] mx-[15px] grow items-center">
+      <div className="reviewDetails my-[0px] mx-[15px] grow  ">
         <p className="font-normal text-xl leading-6 ">{name}</p>
         <p>
           Price : <span className="text-[#FF9900]">${price}</span>
@@ -13,7 +13,7 @@ const ReviewItem = ({ product }) => {
           Shipping Charge : <span className="text-[#FF9900]">{quantity}</span>
         </p>
       </div>
-      <button className="bg-[#eb57574d] h-[55px] w-[55px] rounded-full flex justify-center items-center  mx-auto text-[#EB5757] font-semibold">
+      <button onClick={() => handleRemoveFromCart(id)} className="bg-[#eb57574d] m-auto h-[55px] w-[55px] rounded-full flex justify-center items-center  mx-auto text-[#EB5757] font-semibold">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

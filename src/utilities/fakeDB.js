@@ -20,9 +20,9 @@ const removeFromDB = (id) => {
 
   if (id in shoppingCart) {
     delete shoppingCart[id];
-    localStorage.setItem("shopping-cart");
+    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
   }
-  localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  
 };
 
 const getShoppingCart = () => {
@@ -40,6 +40,6 @@ const deleteShoppingCart = () => {
 }
 
 export {
-    addToDB, deleteShoppingCart, getShoppingCart, removeFromDB
+  addToDB, deleteShoppingCart, getShoppingCart, removeFromDB
 };
 
