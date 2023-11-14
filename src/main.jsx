@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import Checkout from "./pages/Checkout/Checkout.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import ManageInventory from "./pages/ManageInventory/ManageInventory.jsx";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/manageInventory",
         element: <ManageInventory/>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout/>,
       },
       {
         path: "/login",

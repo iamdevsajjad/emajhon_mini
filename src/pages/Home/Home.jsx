@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Cart from "../../components/Cart/Cart";
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
 import {
@@ -53,7 +54,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex container mx-auto">
       <div className="products_container grid-flow-col-[4fr 1fr]  w-full p-5">
         <ProductsContainer
           handleAddToCart={handleAddToCart}
@@ -62,25 +63,27 @@ const Home = () => {
       </div>
       <div className="cart ">
         <Cart items={items} handleClearCart={handleClearCart}>
-          <button className="flex justify-between w-[90%] mx-auto p-2  text-white bg-[#FF9900] hover:bg-[#c89345] transition-all rounded-sm">
-            <p className="mx-2">Clear Cart</p>{" "}
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </div>
-          </button>
+          <Link to="/orderReview">
+            <button className="flex justify-between w-[90%] mx-auto p-2  text-white bg-[#FF9900] hover:bg-[#c89345] transition-all rounded-sm">
+              <p className="mx-2">Review Cart</p>{" "}
+              <div className="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </div>
+            </button>
+          </Link>
         </Cart>
       </div>
     </div>
