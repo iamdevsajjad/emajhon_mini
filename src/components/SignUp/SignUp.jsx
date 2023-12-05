@@ -5,7 +5,7 @@ const SignUp = () => {
   return (
     <form
       action=""
-      className="border-2 border-black w-[500px] rounded-md bgwhite mx-auto my-auto"
+      className="border-2 border-black w-[500px] rounded-md bgwhite mx-auto my-auto mt-4"
     >
       <h3 className="text-3xl text-center my-5">Sign Up</h3>
       <div className="inputs space-y-3 px-10">
@@ -38,12 +38,12 @@ const SignUp = () => {
         </div>
       </div>
       <div className="buttons flex flex-col items-center">
-        <button className="bg-[#FF9900] my-7 h-[55px] w-[415px] rounded-md ">
+        <button className="bg-[#FF9900] text-xl font-bold my-7 h-[55px] w-[415px] rounded-md ">
           Sign Up
         </button>
-        <p className="textcen">
+        <p className="">
           Already have an account?{" "}
-          <Link className="text-[#F90] font-bold" to={"/login"}>
+          <Link className="text-[#F90]  font-bold" to={"/login"}>
             Login
           </Link>{" "}
         </p>
